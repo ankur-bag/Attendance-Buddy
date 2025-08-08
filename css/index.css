@@ -1,0 +1,62 @@
+@import 'common.css';
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Title */
+.title-container h1 {
+    padding: 20px;
+    z-index: 2;
+    position: relative; /* ensures z-index works */
+    font-family: Bitcount Grid Single;
+}
+
+/* Spline background at lowest layer */
+.spline-container {
+    flex: 1;
+    width: 100%;
+    min-height: 70vh;
+    position: absolute; /* so it sits behind everything */
+    top: 0;
+    left: 0;
+    z-index: 0; /* base layer */
+}
+
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Button above spline */
+.button-container {
+    position: relative;
+    margin-top: 60vh; /* move button up */
+    padding-bottom: 40px; /* breathing space below */
+    z-index: 2; /* above spline */
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .spline-container {
+        min-height: 60vh;
+    }
+
+    .button-container {
+        margin-top: -40px;
+        padding-bottom: 30px;
+    }
+}

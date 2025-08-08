@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+spline-viewer {
+    display: block;
+    width: 100%;
+    height: 500px;
+}
+
+spline-viewer {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 400px;
+    border-radius: 20px;
+    
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #121212;
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1200px;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Specific container for landing page to remove the background */
+body[data-page="landing"] .container {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 0 25px rgba(255,255,255,0.6);
+}
+
+.btn {
+    background: linear-gradient(135deg, #c31432 0%, #240b36 100%);
+    color: #fff;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    display: inline-block;
+    margin-top: 20px;
+}
+.start{
+    margin-top: 5px;
+}
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.5);
+}
+
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+}
+
+.input-field {
+    width: 80%;
+    max-width: 500px;
+    padding: 18px;
+    border-radius: 15px;
+    border: 2px solid #444;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.input-field:focus {
+    border-color: #c31432;
+    box-shadow: 0 0 15px rgba(195,20,50,0.5);
+}
+
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.student-box {
+    padding: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.student-box:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+.student-box.present {
+    background: linear-gradient(135deg, #16a085 0%, #f4d03f 100%);
+    color: #111;
+}
+
+.student-box.absent {
+    background: linear-gradient(135deg, #4c4c4c 0%, #2c2c2c 100%);
+}
+
+.student-roll {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+}
+
+.student-name {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.info-bar {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.info-bar p {
+    margin: 5px 15px;
+    font-size: 1.1rem;
+}
+
+#export-pdf-btn {
+    margin-top: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    .student-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .student-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .student-box {
+        padding: 10px;
+    }
+    .student-roll {
+        font-size: 0.8rem;
+    }
+    .student-name {
+        font-size: 0.7rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .btn {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+    .student-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .container {
+        padding: 15px;
+    }
+    .student-box {
+        padding: 15px;
+    }
+    .student-roll {
+        font-size: 1rem;
+    }
+    .student-name {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .student-grid {
+        grid-template-columns: 1fr;
+    }
+}
