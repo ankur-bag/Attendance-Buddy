@@ -14,17 +14,18 @@ body {
     z-index: 2;
     position: relative; /* ensures z-index works */
     font-family: Bitcount Grid Single;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 1rem;
 }
 
 /* Spline background at lowest layer */
 .spline-container {
-    flex: 1;
+    position: relative;
     width: 100%;
-    min-height: 70vh;
-    position: absolute; /* so it sits behind everything */
-    top: 0;
-    left: 0;
-    z-index: 0; /* base layer */
+    height: 60vh;
+    margin: 2rem 0;
+    z-index: 1;
 }
 
 spline-viewer {
@@ -36,10 +37,16 @@ spline-viewer {
 /* Button above spline */
 .button-container {
     position: relative;
-    margin-top: 60vh; /* move button up */
-    padding-bottom: 40px; /* breathing space below */
-    z-index: 2; /* above spline */
+    z-index: 2;
     text-align: center;
+    margin: 1rem 0 4rem 0;
+}
+
+.btn.start {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    min-width: 200px;
+    touch-action: manipulation;
 }
 
 footer {
@@ -47,16 +54,31 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 3;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    .spline-container {
-        min-height: 60vh;
+    .title-container h1 {
+        font-size: 2rem;
+        padding: 15px;
     }
 
-    .button-container {
-        margin-top: -40px;
-        padding-bottom: 30px;
+    .spline-container {
+        height: 50vh;
+    }
+
+    .btn.start {
+        font-size: 1.1rem;
+        padding: 0.9rem 1.8rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 0.8rem;
     }
 }
