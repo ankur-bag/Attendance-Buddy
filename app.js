@@ -107,11 +107,33 @@ document.addEventListener("DOMContentLoaded", () => {
             doc.text("Present Students", 20, 80);
 
             let y = 90;
+            const itemsPerPage = 25; // Maximum items per page
+            const lineHeight = 10; // Height of each line
+
             presentStudents.forEach((student, index) => {
+                // Check if we need a new page
+                if (y > 270) { // 270 is approximate max height for content
+                    doc.addPage();
+                    y = 20; // Reset y position for new page
+                    
+                    // Add header to new page
+                    doc.setFontSize(14);
+                    doc.text("Present Students (Continued)", 20, y);
+                    y += 20; // Space after header
+                }
+
                 doc.setFontSize(12);
                 doc.text(`${index + 1}. ${student.roll} – ${student.name}`, 20, y);
-                y += 10;
+                y += lineHeight;
             });
+
+            // Add page numbers
+            const pageCount = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                doc.setFontSize(10);
+                doc.text(`Page ${i} of ${pageCount}`, 105, 290, { align: 'center' });
+            }
 
             // Save the PDF
             doc.save(`Attendance_${selectedClass.id}_${selectedDate}.pdf`);
