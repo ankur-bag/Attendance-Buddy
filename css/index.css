@@ -1,84 +1,199 @@
 @import 'common.css';
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.landing-page {
+    width: 100%;
     overflow-x: hidden;
-    position: relative;
 }
 
-/* Title */
-.title-container h1 {
-    padding: 20px;
-    z-index: 2;
-    position: relative; /* ensures z-index works */
-    font-family: Bitcount Grid Single;
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
     text-align: center;
+}
+
+.hero-content {
+    z-index: 10;
+    max-width: 900px;
+}
+
+.hero-subheading {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    color: var(--text-dim);
+    margin: 2.5rem 0;
+}
+
+/* SECTION GLOBAL */
+.section-container {
+    max-width: 900px;
+    margin: 10rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 5;
+}
+
+.section-title {
+    font-family: var(--font-heading);
     font-size: 2.5rem;
-    margin-top: 1rem;
+    margin-bottom: 3rem;
+    letter-spacing: -0.02em;
+    color: #fff;
 }
 
-/* Spline background at lowest layer */
-.spline-container {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    margin: 2rem 0;
-    z-index: 1;
+/* DESCRIPTION BOX */
+.description-box {
+    padding: 3rem;
+    text-align: left;
+    font-size: 1.25rem;
+    line-height: 1.8;
 }
 
-spline-viewer {
-    width: 100%;
-    height: 100%;
+.description-box p {
+    margin-bottom: 1.5rem;
+}
+
+.highlight-text {
+    color: var(--primary-color);
+    letter-spacing: 1px;
+}
+
+/* GRIDS */
+.content-item {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+
+.content-item p {
+    margin-bottom: 1.5rem;
+}
+
+.steps-grid, .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.step-card, .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border-dim);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.step-card:hover, .feature-card:hover {
+    border-color: rgba(16, 185, 129, 0.2);
+    transform: translateY(-5px);
+}
+
+.step-num {
+    font-size: 0.8rem;
+    color: var(--primary-color);
     display: block;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
 }
 
-/* Button above spline */
-.button-container {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin: 1rem 0 4rem 0;
+.feature-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    letter-spacing: 1px;
 }
 
-.btn.start {
-    font-size: 1.2rem;
-    padding: 1rem 2rem;
-    min-width: 200px;
-    touch-action: manipulation;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-    text-align: center;
-    padding: 1rem;
+.feature-card p {
     font-size: 0.9rem;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
+    color: var(--text-dim);
 }
 
-/* Mobile adjustments */
+/* PERSONAL NOTE */
+.warning-box {
+    background: rgba(255, 165, 0, 0.03);
+    border: 1px solid rgba(255, 165, 0, 0.1);
+    border-radius: 4px; /* Industrial look */
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.warning-header {
+    margin-bottom: 1rem;
+    color: #ffa500;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.warning-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* FUN SECTION */
+.fun-section {
+    text-align: center;
+}
+
+.fun-section p {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* FOOTER */
+footer {
+    position: relative;
+    padding: 4rem 2rem;
+    background: transparent;
+    border-top: 1px solid var(--border-dim);
+    margin-top: 5rem;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    opacity: 0.5;
+}
+
+/* BACKGROUNDS */
+.framer-bg {
+    position: fixed; /* Stick to viewport for hero at least, or leave as absolute in hero */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero .framer-bg {
+    position: absolute;
+}
+
 @media (max-width: 768px) {
-    .title-container h1 {
-        font-size: 2rem;
-        padding: 15px;
+    .section-container {
+        margin: 6rem auto;
     }
-
-    .spline-container {
-        height: 50vh;
+    .title {
+        font-size: 2.5rem;
     }
-
-    .btn.start {
-        font-size: 1.1rem;
-        padding: 0.9rem 1.8rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        padding: 0.8rem;
+    .description-box {
+        padding: 2rem;
     }
 }

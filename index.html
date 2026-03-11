@@ -3,26 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Buddy</title>
+    <title>Attendance Buddy — Minimalist Roster Tracking</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Bungee&family=Liter&family=Metamorphous&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bitcount+Grid+Single:wght@100..900&family=Bungee&family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Jersey+25&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend:wght@100..900&family=Liter&family=Metamorphous&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Poiret+One&family=Quintessential&family=Turret+Road:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.44/build/spline-viewer.js"></script>
 </head>
-<body>
-    <div class="title-container">
-        <h1 class="title animate__animated animate__fadeInDown">Attendance Buddy</h1>
-    </div>
-    <div class="spline-container">
-        <spline-viewer url="https://prod.spline.design/iJ-Ln98oDIyumlZa/scene.splinecode" loading-anim-type="spinner"></spline-viewer>
-    </div>
-    <div class="button-container">
-        <a href="selection.html" class="btn animate__animated animate__fadeInUp    start">Start Now</a>
-    </div>
-    <footer class="animate__animated animate__fadeIn">
-        <p>Made by Ankur Bag</p>
+<body data-page="landing">
+    <main class="landing-page">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="brand-title">Attendance Buddy</span>
+                <p class="hero-subheading">Because even small tasks deserve automation.</p>
+                <h1 class="title">Generate a formatted<br>attendance list in seconds —</h1>
+                <p class="hero-tagline">no manual typing, no waiting, no hassle.</p>
+                <div class="cta-area">
+                    <a href="selection.html" class="btn">Generate Attendance</a>
+                </div>
+            </div>
+            <div class="framer-bg">
+                <div class="blob emerald"></div>
+                <div class="blob dark-emerald"></div>
+            </div>
+        </section>
+
+        <!-- DESCRIPTION SECTION -->
+        <section class="section-container">
+            <div class="glass-card description-box">
+                <p>After long lectures, the last thing anyone wants is to sit around while attendance lists are manually typed and formatted. <strong>Attendance Buddy</strong> is a tiny automation tool that simplifies this everyday task.</p>
+                <p>Just select the date, course name, course code, and professor, and the tool instantly generates a clean, ready-to-send attendance list.</p>
+                <p class="highlight-text">Simple. Fast. Done in seconds.</p>
+            </div>
+        </section>
+
+        <!-- WHY I BUILT THIS SECTION -->
+        <section class="section-container">
+            <h2 class="section-title">Why I Built This</h2>
+            <div class="content-grid">
+                <div class="content-item">
+                    <p>Every class ends the same way — roll numbers collected, details written down, and someone manually formatting the attendance list before sending it to the professor.</p>
+                    <p>It’s repetitive, boring, and honestly unnecessary.</p>
+                    <p>So instead of doing it the long way every day, I built a small tool that does the formatting instantly.</p>
+                    <p>A tiny automation, but it saves time every single lecture.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS SECTION -->
+        <section class="section-container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-num">01</span>
+                    <p>Select the date of the lecture</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">02</span>
+                    <p>Choose the course name and course code</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">03</span>
+                    <p>Pick the respective professor</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">04</span>
+                    <p>Instantly generate a formatted attendance list</p>
+                </div>
+            </div>
+            <p class="center-text">No extra steps. No unnecessary complexity.</p>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="section-container">
+            <h2 class="section-title">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Instant List Generation</h3>
+                    <p>Automatically formats the attendance list in seconds.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Preconfigured Course Details</h3>
+                    <p>Course names, codes, and professors are already set.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Zero Setup</h3>
+                    <p>No database, no login, no storage.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Built for Speed</h3>
+                    <p>Designed for quick use right after class.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERSONAL NOTE SECTION -->
+        <section class="section-container">
+            <div class="warning-box">
+                <div class="warning-header">
+                    <span>⚠ PERSONAL TOOL</span>
+                </div>
+                <p>This tool exists purely because I’m a lazy engineer who wanted to automate attendance formatting. It’s configured only for my classes, so it’s not meant for general use.</p>
+            </div>
+        </section>
+
+        <!-- FUN SECTION -->
+        <section class="section-container fun-section">
+            <h2 class="section-title">Small Automation, Big Relief</h2>
+            <p>Sometimes the best tools aren’t massive platforms — they’re tiny utilities that remove everyday friction. <strong>Attendance Buddy</strong> is one of those tools.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Built by Ankur Bag</p>
+        <p class="footer-note">A small automation project built during engineering life.</p>
     </footer>
 </body>
 </html>

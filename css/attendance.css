@@ -1,90 +1,120 @@
 @import 'common.css';
 
 .container {
-    background: rgba(20, 20, 20, 0.4);
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    width: 90%;
-    max-width: 1200px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    margin: 20px auto;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
-h1{
-   font-family: "Bungee";
+
+.title {
+    margin-bottom: 2rem;
+}
+
+.info-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+}
+
+.info-bar p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.info-bar p strong {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 0.25rem;
 }
 
 .student-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .student-box {
-    padding: 20px;
-    border-radius: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border-dim);
+    padding: 1.5rem;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
 .student-box:hover {
-    transform: scale(1.05);
-    border-color: rgba(33, 150, 243, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
 }
 
 .student-box.present {
-    background: rgba(76, 175, 80, 0.1);
-    border-color: rgba(76, 175, 80, 0.3);
+    border-color: var(--primary-color);
+}
+
+.student-box.present::after {
+    content: 'PRESENT';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.6rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
 }
 
 .student-box.absent {
-    background: rgba(158, 158, 158, 0.1);
-    border-color: rgba(158, 158, 158, 0.3);
+    opacity: 0.4;
 }
 
 .student-roll {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin: 0 0 5px 0;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    display: block;
+    letter-spacing: 1px;
 }
 
 .student-name {
-    font-size: 0.9rem;
-    margin: 0;
-    opacity: 0.8;
-    
-}
-
-.info-bar {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 15px;
-    border-radius: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: Mozilla Headline;
-    
-}
-
-.info-bar p {
-    margin: 5px 10px;
+    font-size: 1.1rem;
+    color: var(--text-main);
 }
 
 #export-pdf-btn {
-    margin-top: 30px;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .student-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+    .student-box {
+        padding: 1rem;
+    }
+    .student-name {
+        font-size: 1rem;
+    }
+    #export-pdf-btn {
+        position: static;
+        width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
     }
 }
